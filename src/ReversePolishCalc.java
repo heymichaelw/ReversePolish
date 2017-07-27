@@ -32,6 +32,18 @@ public class ReversePolishCalc {
                         double result = firstNum +secondNum;
                         stack.push(result);
                         break;
+                    case "-":
+                        double firstNumber = stack.pop();
+                        double secondNumber = stack.pop();
+                        double minusResult = firstNumber - secondNumber;
+                        stack.push(minusResult);
+                        break;
+                    case "*":
+                        double first = stack.pop();
+                        double second = stack.pop();
+                        double timesResult = first * second;
+                        stack.push(timesResult);
+                        break;
                     default:
                         stack.push(Double.parseDouble(tokens[i]));
                         break;
